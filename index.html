@@ -11,15 +11,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/tam.css">
     <style type="text/css">
-      .container{
-        
-      }
+
+     *{
+      margin: 0px;
+      padding: 0px;
+     }
+      
       body{
-        background-color: #E6E2EB;
+        background-color: #DBDBDB;
       }
       #menu{
         height: 39px;
-        width: 1349px;
+        width: 1365px;
         background-color: #1F1F1F;
       }
       .show-grid [class*="col-"] {
@@ -33,12 +36,70 @@
       #backgound{
         width: 1400px;
       }
+      .navbar-brand{
+        margin-left: 100px;
+
+      }
+     
+      .navbar-custom {
+        background-color:#555555;
+        color:#ffffff;
+        border-radius:0;
+      }
+      .btn-inverse{
+        color: black;
+        background-color: #215E92;
+        border: solid 2px color white;
+      }
+      .dropdown-toggle{
+        color: white;
+      }
+       /* định dạng menu trên header */
+      #menu ul {
+        background: #232323;
+        list-style-type: none;
+        text-align: center;
+      }
+      #menu li {
+        color: #f1f1f1;
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: -5px;
+      }
+      #menu a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+      }
+      #menu a:hover {
+        background: #215E92;
+        color: #333;
+      }
+      .sub-menu li {
+        display: none;
+      }
+      #menu li {
+         position: relative;
+      }
+      .sub-menu {
+         display: none;
+         position: absolute;
+      }
+      #menu li:hover .sub-menu {
+        display: block;
+      }
+      .sub-menu li {
+        margin-left: 0 !important;
+      }
     </style>
 
   </head>
   <body>
+<div id = "wrapper">
     <!-- inverse-->
-    <nav class="navbar navbar" role="navigation" style="color: red;">
+    <nav class="navbar navbar-custom" role="navigation" style="color: red;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -48,7 +109,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,15 +117,23 @@
       <ul class="nav navbar-nav">
         
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">|||<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">||||<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">All</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">People</a></li>
             <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Companies</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Groups</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Universities</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Posts</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Inbox</a></li>
           </ul>
         </li>
       </ul>
@@ -72,12 +141,12 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search for people, jobs, companies, and more..." size="60px" style="">
         </div>
-        <button type="submit" class="btn btn-inverse btn-sm">Search</button><span style="color: black; margin-left: 20px;">Advanced</span>
+        <button type="submit" class="btn btn-inverse btn-sm" >Search</button><span style="color: white; margin-left: 20px;">Advanced</span>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#" style="color: white;">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -89,27 +158,123 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-  <div id="menu"></div>
 
-  <img src="images/background.jpg" style="height: 200px;width: 1400px;">
-</nav>
-<div class="row  show-grid">
-  <div id = backgound class="col-md-3 col-md-offset-2">
-      <img src="images/anh.jpg" style="">
+  <!-- div menu -->
+
+  <div id="menu">
+    <div id="menu">
+      <ul>
+        <li><a href="#" >Home</a></li>
+        <li><a href="#">Profile</a>
+          <ul class="sub-menu">
+            <li><a href="#">Edit profile</a></li>
+            <li><a href="#"><a href="https://www.google.com">Who's viewed Your Profile</a></a></li>
+            <li><a href="#">Your Updates</a></li>
+          </ul>
+        </li>
+        <li><a href="#">My Network</a>
+          <ul class="sub-menu">
+            <li><a href="#">Connections</a></li>
+            <li><a href="#"><a href="https://www.google.com">Add Contacts</a></a></li>
+            <li><a href="#">People You May Know</a></li>
+            <li><a href="#">Find Alumni</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Education</a>
+          <ul class="sub-menu">
+            <li><a href="#">University Finder</a></li>
+            <li><a href="#"><a href="https://www.google.com">Field of Study Exploer</a></a></li>
+            <li><a href="#">University Ranking</a></li>
+           
+          </ul>
+        </li>
+
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Interests</a>
+          <ul class="sub-menu">
+            <li><a href="#">Companies</a></li>
+            <li><a href="#"><a href="https://www.google.com">Groups</a></a></li>
+            <li><a href="#">Pulse</a></li>
+            <li><a href="#">Slide Share</a></li>
+            <li><a href="#">Online Learning</a></li>
+           
+          </ul>
+        </li>
+       <li><a href="#">Business Service</a>
+          <ul class="sub-menu">
+            <li><a href="#">Post a Job</a></li>
+            <li><a href="#"><a href="https://www.google.com">Talent Solution</a></a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Sales Solution</a></li>
+           
+          </ul>
+        </li>
+        <li><a href="#">Try Free</a>
+          <ul class="sub-menu">
+         
+           
+          </ul>
+        </li>
+
+
+    </div>
   </div>
-  <div class="col-md-4">
-      <span class="fn"><span class="full-name" dir="auto">Jeff Weiner</span></span>
-      <h3>Sinh Viên</h3>
-      <h4>Tp Hồ Chí Minh</h4>
-      <p>Curent : hahahahaha</p>
-      <p>pevious : hihi</p>
-      <p>Education : KHTN</p>
+
+  <!-- backgound images -->
+  <!-- <div id = "background"><img src="images/background.jpg" style="height: auto;width: 1349px;"></div> -->
+  
+
+</nav>
+  
+
+  <!-- thông tin cá nhân -->
+<div class="row  show-grid" style="margin-top: 200px;">
+  <div id = backgound class="col-md-3 col-md-offset-2" style="background-color: #FFFFFF; height: 300px;">
+      <img src="images/anh.jpg" style="height: 240px;width: 240px; margin-left: 30px; margin-top: 15px;">
+  </div>
+  <div class="col-md-5" style="background-color: #FFFFFF; height: 300px;">
+      <br>
+      <span style="color: black; font-size: 20px; font-weight: bold;">Duy Chinh</span><br>
+      <span style="color:#C3B4A1; font-size: 20px; ">Sinh viên tại Đại học KHTN </span><br>
+      <span>Linh Trung Thủ Đức TP Hồ Chí Minh</span><br><br>
+      <a href="#" style="color: blue;">Curent</a>
+      <span>Sinh Viên KHTN</span><br>
+      <a href="#" style="color: blue;">Previous</a>
+      <span>Học sinh tại THPT Nam Trực</span><br>
+      <a href="#" style="color: blue;">Education</a>
+      <span>Đại học KHTN Tp Hồ Chí Minh</span><br><br>
+
+      <!-- button follow -->
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Follow</button>
+        
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+
+        </button>
+
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">View recent activity</a></li>
+          <li><a href="#">Send Duy InMail</a></li>
+          <li><a href="#">Connect</a></li>
+          <li><a href="#">Share profile</a></li>
+          <li><a href="#">Save to PDF</a></li>
+          <li><a href="#">Block or report</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+        
+    </div>  
+    <span style="margin-left: 20px;">know Duy?</span>
+    <a href="#" style="margin-left: 20px;">Connect</a>
+
   </div>
 </div>
 
+</div>
 
-
-<!-- ảnh background -->
 
         
     
