@@ -29,7 +29,7 @@
       }
       #menu{
         height: 39px;
-        width: 1365px;
+        width: 1346px;
         background-color: #1F1F1F;
       }
       .show-grid [class*="col-"] {
@@ -100,6 +100,11 @@
       .sub-menu li {
         margin-left: 0 !important;
       }
+      .skills{
+      	margin-left: 20px;
+      	font-size: 18px;
+      	font-weight: bold;
+      }
     </style>
 
   </head>
@@ -148,7 +153,7 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search for people, jobs, companies, and more..." size="60px" style="">
         </div>
-        <button type="submit" class="btn btn-inverse btn-sm" >Search</button><span style="color: white; margin-left: 20px;">Advanced</span>
+        <button type="submit" class="btn btn-inverse btn-sm" style="color: white;">Search</button><span style="color: white; margin-left: 20px;">Advanced</span>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" style="color: white;">Link</a></li>
@@ -157,9 +162,10 @@
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Something else here</a></li>
+            
+            
           </ul>
         </li>
       </ul>
@@ -269,8 +275,7 @@
           <li><a href="#">Share profile</a></li>
           <li><a href="#">Save to PDF</a></li>
           <li><a href="#">Block or report</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+        
         </ul>
         
     </div>  
@@ -291,27 +296,30 @@ app.controller('customersCtrl', function($scope, $http) {
   });
 });
 </script>
+<!-- <div ng-app="myApp" ng-controller="customersCtrl"> 
+      <div ng-repeat="x in myData">
+        {{ x.Summary + x.Experience }}
+      </div>
+ </div> -->
 
 
 
-<div class="cv">
+<div class="cv" ng-app="myApp" ng-controller="customersCtrl">
   <!-- summary -->
 <hr>
 <div class="row show-gird" style="margin-top: 10px;">
    
     <div class="col-md-8 col-md-offset-2" style="background-color: white;">
 
-    <!-- <h2 style="background : #333;color: white;font-size: 13px;font-weight: bold;word-wrap: normal;">Background</h2> -->
+    
     <img src="images/background.png" style="margin: 0px;padding: 0px;"><br>
     <img src="images/summary.png" style="margin-top: 5px;"><br><br>
     <div class="contend" style="font-family: Arial;">
     
     <!-- đọc summary -->
-    <div ng-app="myApp" ng-controller="customersCtrl"> 
-      <div ng-repeat="x in myData">
-        {{ x.Summary}}
-      </div>
-    </div>
+    <div ng-repeat="x in myData">
+        {{ x.Summary }}
+     </div>
 
     </div>
     </div>
@@ -323,16 +331,89 @@ app.controller('customersCtrl', function($scope, $http) {
 
     <img src="images/experience.png" style="margin-top: 5px;"><br><br>
 
-      <div ng-app="myApp" ng-controller="customersCtrl"> 
-        <ul>
-          <p ng-repeat="x in myData">
-            {{x.Experience }}
-          </p>
-        </ul>
-      </div>
+    <!-- đọc experience -->
+    <div ng-repeat="x in myData">
+        {{ x.Experience }}
+     </div>
+      
 
     </div>
 </div>
+
+<!-- projects -->
+<div class="row show-gird" style="margin-top: 2px;">
+    <div class="col-md-8 col-md-offset-2" style="background-color: white;">
+
+    <img src="images/projects.png" style="margin-top: 5px;"><br><br>
+
+    <!-- đọc experience -->
+    <div ng-repeat="x in myData">
+        {{ x.Projects }} 
+
+    </div>
+    <a href="#">Lear more</a>
+      
+
+    </div>
+</div>
+
+<!-- Skills -->
+<div class="row show-gird" style="margin-top: 2px;">
+    <div class="col-md-8 col-md-offset-2" style="background-color: white;">
+
+    <img src="images/skills.png" style="margin-top: 5px;"><br><br>
+
+    <a href="#" class="skills">Lập Trình C/C++<span class="badge">0</span></a><br>
+    <a href="#" class="skills">Lập Trình Java<span class="badge">1</span></a><br>
+    <a href="#" class="skills">PHP Basic<span class="badge">0</span></a><br>
+    <a href="#" class="skills">Python Basic<span class="badge">1</span></a><br>
+    
+
+    <!-- đọc experience -->
+    <div ng-repeat="x in myData">
+        
+     </div>
+      
+
+    </div>
+</div>
+
+<!-- Education -->
+<div class="row show-gird" style="margin-top: 2px;">
+    <div class="col-md-8 col-md-offset-2" style="background-color: white;">
+
+    <img src="images/education.png" style="margin-top: 5px;"><br><br>
+
+    <!-- đọc experience -->
+    <a href=""></a>
+    <a href="#" style="color: blue;font-size: 15px;font-weight: bold;">University of Pennsylvania - The Wharton School</a>
+    <div ng-repeat="x in myData">
+        {{ x.Education }}
+     </div>
+      
+
+    </div>
+</div>
+
+<!-- bottom -->
+<!-- Education -->
+
+<div id="bottom" style="text-align: center;padding: 5px; margin: 10px;">
+	<a href="#">Held Center</a>
+	<a href="#">About</a>
+	<a href="#">Careers</a>
+	<a href="#">Advertising</a>
+	<a href="#">Talent Solutions</a>
+	<a href="#">Sales Solutions</a>
+	<a href="#">Small Business</a>
+	<a href="#">Mobile</a>
+	<a href="#">Language</a>
+	<a href="#" style="font-weight: bold;">Upgrade Your Account</a>
+	
+
+
+</div>
+
 </div>
 
 <!-- các thông tin của cv -->
