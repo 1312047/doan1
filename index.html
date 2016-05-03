@@ -12,7 +12,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Duy Chinh | LinkedIn</title>
     <link rel="shortcut icon"
-     href="images/LinkedIn.png" />
+     href="images/icontab.png" />
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,6 @@
       }
       .navbar-brand{
         margin-left: 100px;
-
       }
      
       .navbar-custom {
@@ -70,9 +69,9 @@
       #menu li {
         color: #f1f1f1;
         display: inline-block;
-        width: 120px;
-        height: 40px;
-        line-height: 40px;
+        width: 110px;
+        height: 10px;
+        line-height: 30px;
         margin-left: -5px;
       }
       #menu a {
@@ -111,8 +110,9 @@
   <body>
 <div id = "wrapper">
     <!-- inverse-->
-    <nav class="navbar navbar-custom" role="navigation" style="color: red;">
-  <div class="container-fluid">
+    <!-- navbar -->
+  	<nav class="navbar navbar-custom" role="navigation" style="color: red;">
+  	<div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -164,8 +164,6 @@
             <li><a href="#">Another action</a></li>
             <li class="divider"></li>
             <li><a href="#">Something else here</a></li>
-            
-            
           </ul>
         </li>
       </ul>
@@ -177,7 +175,7 @@
   <div id="menu">
     <div id="menu">
       <ul>
-        <li><a href="#" >Home</a></li>
+        <li style="margin-left: -50px;"><a href="#" >Home</a></li>
         <li><a href="#">Profile</a>
           <ul class="sub-menu">
             <li><a href="#">Edit profile</a></li>
@@ -231,14 +229,10 @@
 
 
     </div>
+    <!-- kết thúc div menu -->
   </div>
-
-  <!-- backgound images -->
-  <!-- <div id = "background"><img src="images/background.jpg" style="height: auto;width: 1349px;"></div> -->
-  
-
 </nav>
-  
+<!-- kết thúc phần header -->
 
   <!-- thông tin cá nhân -->
 <div class="row  show-grid" style="margin-top: 200px;">
@@ -278,10 +272,10 @@
         
         </ul>
         
-    </div>  
+    </div> 
+    <!-- end button follow --> 
     <span style="margin-left: 20px;">know Duy?</span>
     <a href="#" style="margin-left: 20px;">Connect</a>
-
   </div>
 </div>
 
@@ -301,8 +295,6 @@ app.controller('customersCtrl', function($scope, $http) {
         {{ x.Summary + x.Experience }}
       </div>
  </div> -->
-
-
 
 <div class="cv" ng-app="myApp" ng-controller="customersCtrl">
   <!-- summary -->
@@ -409,26 +401,11 @@ app.controller('customersCtrl', function($scope, $http) {
 	<a href="#">Mobile</a>
 	<a href="#">Language</a>
 	<a href="#" style="font-weight: bold;">Upgrade Your Account</a>
-	
+
+</div> <!-- end div button -->
 
 
-</div>
-
-</div>
-
-<!-- các thông tin của cv -->
-
-
-
-
-
-
-</div>
-
-
-        
-    
-    
+</div> <!-- end div background-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
