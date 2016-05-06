@@ -157,14 +157,14 @@
         <button type="submit" class="btn btn-inverse btn-sm" style="color: white;">Search</button><span style="color: white; margin-left: 20px;">Advanced</span>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" style="color: white;">Link</a></li>
+        <!-- <li><a href="#" style="color: white;">Link</a></li> -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Friends</a></li>
             <li class="divider"></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Log out</a></li>
           </ul>
         </li>
       </ul>
@@ -299,7 +299,8 @@
       <!-- end button follow --> 
       <span style="margin-left: 20px;">know Duy?</span>
       <a href="#" style="margin-left: 20px;">Connect</a>
-      <button style="margin-left: 85px; " ng-click = tinh()>Edit Content</button>
+      <button style="margin-left: 90px;" ng-click = edit()>Edit</button>
+      <button style="margin-left: 5px; " ng-click = tinh()>Save</button>
 
     </div>
   </div>
@@ -317,23 +318,24 @@
   // });
 </script>
 
-<div class="cv" >
+<!-- toàn mục background -->
+
+<div class="cv"  ng-repeat="x in myData"  ng-app="myApp" ng-controller="tinhtoan2">
   <!-- summary -->
 <hr>
 <div class="row show-gird" style="margin-top: 10px;">
-   
     <div class="col-md-8 col-md-offset-2" style="background-color: white;">
-
-    
     <img src="images/background.png" style="margin: 0px;padding: 0px;"><br>
     <img src="images/summary.png" style="margin-top: 5px;"><br><br>
     <div class="contend" style="font-family: Arial;">
     
     <!-- đọc summary -->
-    <div ng-repeat="x in myData">
+    <div id="id07">
         {{ x.Summary }}
-     </div>
-
+    </div>
+    <input style="height: 50px; width: 800px; margin-bottom: 10px;" type="text" ng-model = "summary" />
+    <button ng-click = edit2()>Edit</button>
+    <button ng-click = tinh2()>Save</button>
     </div>
     </div>
 </div>
@@ -345,10 +347,12 @@
     <img src="images/experience.png" style="margin-top: 5px;"><br><br>
 
     <!-- đọc experience -->
-    <div ng-repeat="x in myData">
+    <div id="id08">
         {{ x.Experience }}
-     </div>
-      
+    </div>
+    <input style="height: 50px; width: 800px; margin-bottom: 10px;" type="text" ng-model = "experience" />
+    <button ng-click = edit3()>Edit</button>
+    <button ng-click = tinh3()>Save</button>
 
     </div>
 </div>
@@ -360,10 +364,13 @@
     <img src="images/projects.png" style="margin-top: 5px;"><br><br>
 
     <!-- đọc experience -->
-    <div ng-repeat="x in myData">
+    <div id="id09">
         {{ x.Projects }} 
 
     </div>
+    <input style="height: 50px; width: 800px; margin-bottom: 10px;" type="text" ng-model = "projects" />
+    <button ng-click = edit4()>Edit</button>
+    <button ng-click = tinh4()>Save</button>
     <a href="#">Lear more</a>
       
 
@@ -376,16 +383,20 @@
 
     <img src="images/skills.png" style="margin-top: 5px;"><br><br>
 
-    <a ng-repeat="x in myData" href="#" class="skills" >{{x.Kinang1}}<span class="badge">0</span></a><br>
-    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang2}}<span class="badge">1</span></a><br>
-    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang3}}<span class="badge">0</span></a><br>
-    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang4}}<span class="badge">1</span></a><br>
+    <a  href="#" class="skills" id="id10">{{x.Kinang1}}</a><span class="badge">0</span>
+    <input style="margin-left: 100px;" type="text" ng-model = "kinang01" /><br>
+    <a  href="#" class="skills" id="id11">{{x.Kinang2}}</a><span class="badge">1</span>
+    <input style="margin-left: 60px;" type="text" ng-model = "kinang02" /><br>
+    <a  href="#" class="skills" id="id12">{{x.Kinang3}}</a><span class="badge">0</span>
+    <input style="margin-left: 150px;" type="text" ng-model = "kinang03" /><br>
+    <a  href="#" class="skills" id="id13">{{x.Kinang4}}</a><span class="badge">1</span>
+    <input style="margin-left: 125px;" type="text" ng-model = "kinang04" />
+    <button style="margin-left: 10px;" ng-click = edit5()>Edit</button>
+    <button style="margin-bottom: 10px;" ng-click = tinh5()>Save</button>
     
 
     <!-- đọc experience -->
-    <div ng-repeat="x in myData">
-        
-     </div>
+  
       
 
     </div>
@@ -399,11 +410,14 @@
 
     <!-- đọc experience -->
     <a href=""></a>
-    <a href="#" style="color: blue;font-size: 15px;font-weight: bold;"ng-repeat="x in myData">{{ x.Hocvan2 }}</a>
-    <div ng-repeat="x in myData">
+    <a href="#" style="color: blue;font-size: 15px;font-weight: bold;" id="id14">{{ x.Hocvan2 }}</a>
+    <input style="margin-left: 92px; width: 250px;" type="text" ng-model = "hocvan2" /><br>
+    <span id="id15">
         {{ x.Education }}
-     </div>
-      
+    </span>
+    <input style="margin-bottom: 10px; margin-left: 300px; width: 250px;" type="text" ng-model = "education2" />
+    <button style="margin-left: 5px;" ng-click = edit6()>Edit</button>
+    <button ng-click = tinh6()>Save</button>
 
     </div>
 </div>
@@ -421,7 +435,13 @@
   <a href="#">Small Business</a>
   <a href="#">Mobile</a>
   <a href="#">Language</a>
-  <a href="#" style="font-weight: bold;">Upgrade Your Account</a>
+  <a href="#" style="font-weight: bold;">Upgrade Your Account</a><br>
+
+</div> <!-- end div button -->
+
+<div id="bottom" style="text-align: center;padding: 5px; margin: 10px;">
+  
+  <a href="#" style="font-weight: bold; text-align: center;font-size: 30px;">Sinh viên thực hiện : Hoàng Duy Chinh | 1312047</a>
 
 </div> <!-- end div button -->
 
