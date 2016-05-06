@@ -4,6 +4,7 @@
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
   <head>
     <meta charset="utf-8">
@@ -100,19 +101,19 @@
         margin-left: 0 !important;
       }
       .skills{
-      	margin-left: 20px;
-      	font-size: 18px;
-      	font-weight: bold;
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: bold;
       }
     </style>
 
   </head>
   <body>
-<div id = "wrapper">
+<div id = "wrapper" ng-app="myApp" ng-controller="customersCtrl">
     <!-- inverse-->
     <!-- navbar -->
-  	<nav class="navbar navbar-custom" role="navigation" style="color: red;">
-  	<div class="container-fluid">
+    <nav class="navbar navbar-custom" role="navigation" style="color: red;">
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -235,68 +236,88 @@
 <!-- kết thúc phần header -->
 
   <!-- thông tin cá nhân -->
-<div class="row  show-grid" style="margin-top: 200px;">
+<div class="row  show-grid" style="margin-top: 140px;">
+  <!-- div ảnh đại diện -->
   <div id = backgound class="col-md-3 col-md-offset-2" style="background-color: #FFFFFF; height: 300px;">
       <img src="images/anh.jpg" style="height: 240px;width: 240px; margin-left: 30px; margin-top: 15px;">
   </div>
-  <div class="col-md-5" style="background-color: #FFFFFF; height: 300px;">
-      <br>
-      <span style="color: black; font-size: 20px; font-weight: bold;">Duy Chinh</span><br>
-      <span style="color:#C3B4A1; font-size: 20px; ">Sinh viên tại Đại học KHTN </span><br>
-      <span>Linh Trung Thủ Đức TP Hồ Chí Minh</span><br><br>
-      <a href="#" style="color: blue;">Curent</a>
-      <span>Sinh Viên KHTN</span><br>
-      <a href="#" style="color: blue;">Previous</a>
-      <span>Học sinh tại THPT Nam Trực</span><br>
-      <a href="#" style="color: blue;">Education</a>
-      <span>Đại học KHTN Tp Hồ Chí Minh</span><br><br>
+  <!-- div thông tin -->
+  <div id="thongtin" ng-app="myApp" ng-controller="tinhtoan" ng-repeat="y in myData">
+      <div class="col-md-5"  style="background-color: #FFFFFF; height: 300px;">
+        <br>
+        <span id="id01" ng-model = "contentView"  style="color: black; font-size: 20px; font-weight: bold;">
+        {{y.Name}}</span>
+        <input style="margin-left: 115px;" type="text" ng-model = "name" />
+        <!-- <button ng-click = tinh()>Change</button> -->
+        <br>
+        <!-- trường -->
+        <span  id="id02" style="color:#C3B4A1; font-size: 20px; ">{{y.Truong}}</span>
+        <input style="margin-left: 150px;" type="text" ng-model = "truong" />
+        <br>
+        <!-- Vị trí -->
+        <span id="id03">{{y.Vitri}}</span>
+        <input style="margin-left: 52px;" type="text" ng-model = "vitri" />
+        <br><br>
+        <!-- Hiện tại -->
+        <a href="#" style="color: blue;">Curent</a>
+        <span  id="id04">{{y.Hientai}}</span>
+        <input style="margin-left: 135px;" type="text" ng-model = "hientai" />
+        <br>
+        <!-- previous -->
+        <a href="#" style="color: blue;">Previous</a>
+        <span id="id05">{{y.Previous}}</span>
+        <input style="margin-left: 45px;" type="text" ng-model = "previous" />
+        <br>
+        <!-- education -->
+        <a href="#" style="color: blue;">Education</a>
+        <span id="id06">{{y.Hocvan}}</span>
+        <input style="margin-left: 25px;" type="text" ng-model = "hocvan" />
+        <br><br>
 
-      <!-- button follow -->
+        <!-- button follow -->
 
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Follow</button>
-        
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-          <span class="sr-only">Toggle Dropdown</span>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Follow</button>
+          
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
 
-        </button>
+          </button>
 
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#">View recent activity</a></li>
-          <li><a href="#">Send Duy InMail</a></li>
-          <li><a href="#">Connect</a></li>
-          <li><a href="#">Share profile</a></li>
-          <li><a href="#">Save to PDF</a></li>
-          <li><a href="#">Block or report</a></li>
-        
-        </ul>
-        
-    </div> 
-    <!-- end button follow --> 
-    <span style="margin-left: 20px;">know Duy?</span>
-    <a href="#" style="margin-left: 20px;">Connect</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">View recent activity</a></li>
+            <li><a href="#">Send Duy InMail</a></li>
+            <li><a href="#">Connect</a></li>
+            <li><a href="#">Share profile</a></li>
+            <li><a href="#">Save to PDF</a></li>
+            <li><a href="#">Block or report</a></li>
+          
+          </ul>
+          
+      </div> 
+      <!-- end button follow --> 
+      <span style="margin-left: 20px;">know Duy?</span>
+      <a href="#" style="margin-left: 20px;">Connect</a>
+      <button style="margin-left: 85px; " ng-click = tinh()>Edit Content</button>
+
+    </div>
   </div>
+  
 </div>
 
 
 <!-- đọc json  -->
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-  $http.get("customers.json").then(function (response) {
-      $scope.myData = response.data.records;
-  });
-});
+<script type="text/javascript">
+  // var app = angular.module('myApp', []);
+  // app.controller('customersCtrl', function($scope, $http) {
+  //   $http.get("customers.json").then(function (response) {
+  //       $scope.myData = response.data.records;
+  //   });
+  // });
 </script>
-<!-- <div ng-app="myApp" ng-controller="customersCtrl"> 
-      <div ng-repeat="x in myData">
-        {{ x.Summary + x.Experience }}
-      </div>
- </div> -->
 
-<div class="cv" ng-app="myApp" ng-controller="customersCtrl">
+<div class="cv" >
   <!-- summary -->
 <hr>
 <div class="row show-gird" style="margin-top: 10px;">
@@ -355,10 +376,10 @@ app.controller('customersCtrl', function($scope, $http) {
 
     <img src="images/skills.png" style="margin-top: 5px;"><br><br>
 
-    <a href="#" class="skills">Lập Trình C/C++<span class="badge">0</span></a><br>
-    <a href="#" class="skills">Lập Trình Java<span class="badge">1</span></a><br>
-    <a href="#" class="skills">PHP Basic<span class="badge">0</span></a><br>
-    <a href="#" class="skills">Python Basic<span class="badge">1</span></a><br>
+    <a ng-repeat="x in myData" href="#" class="skills" >{{x.Kinang1}}<span class="badge">0</span></a><br>
+    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang2}}<span class="badge">1</span></a><br>
+    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang3}}<span class="badge">0</span></a><br>
+    <a ng-repeat="x in myData" href="#" class="skills">{{x.Kinang4}}<span class="badge">1</span></a><br>
     
 
     <!-- đọc experience -->
@@ -378,7 +399,7 @@ app.controller('customersCtrl', function($scope, $http) {
 
     <!-- đọc experience -->
     <a href=""></a>
-    <a href="#" style="color: blue;font-size: 15px;font-weight: bold;">University of Pennsylvania - The Wharton School</a>
+    <a href="#" style="color: blue;font-size: 15px;font-weight: bold;"ng-repeat="x in myData">{{ x.Hocvan2 }}</a>
     <div ng-repeat="x in myData">
         {{ x.Education }}
      </div>
@@ -391,16 +412,16 @@ app.controller('customersCtrl', function($scope, $http) {
 <!-- Education -->
 
 <div id="bottom" style="text-align: center;padding: 5px; margin: 10px;">
-	<a href="#">Held Center</a>
-	<a href="#">About</a>
-	<a href="#">Careers</a>
-	<a href="#">Advertising</a>
-	<a href="#">Talent Solutions</a>
-	<a href="#">Sales Solutions</a>
-	<a href="#">Small Business</a>
-	<a href="#">Mobile</a>
-	<a href="#">Language</a>
-	<a href="#" style="font-weight: bold;">Upgrade Your Account</a>
+  <a href="#">Held Center</a>
+  <a href="#">About</a>
+  <a href="#">Careers</a>
+  <a href="#">Advertising</a>
+  <a href="#">Talent Solutions</a>
+  <a href="#">Sales Solutions</a>
+  <a href="#">Small Business</a>
+  <a href="#">Mobile</a>
+  <a href="#">Language</a>
+  <a href="#" style="font-weight: bold;">Upgrade Your Account</a>
 
 </div> <!-- end div button -->
 

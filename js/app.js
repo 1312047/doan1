@@ -1,45 +1,33 @@
-var myApp = angular.module("myapp",[]);
 
-myApp.controller("maytinh",function ($scope) {
-	$scope.ketqua = 'ket qua la :';
-	var tam;
-	// body...
+
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("customers.json").then(function (response) {
+      $scope.myData = response.data.records;
+  });
+});
+
+app.controller('tinhtoan', function($scope) {
+	;
 	$scope.tinh = function(){
-		var so1 = $scope.so1;
-		var so2 = $scope.so2;
-		if(so2 == null && so1 != null){
-			$scope.thongbao = 'bạn chưa nhập số thứ 2 !';
+		if($scope.name != null){
+			document.getElementById("id01").innerHTML = $scope.name;
 		}
-		if(so1 == null && so2 != null){
-			$scope.thongbao = 'bạn chưa nhập số thứ nhất !';
+		if($scope.truong != null){
+			document.getElementById("id02").innerHTML = $scope.truong;
 		}
-		if(so1 == null && so2 == null){
-			$scope.thongbao = 'bạn chưa nhập cả hai số !'
+		if($scope.vitri != null){
+			document.getElementById("id03").innerHTML = $scope.vitri;
 		}
-		var pheptinh = $scope.pheptinh;
-		if(pheptinh == 'cong'){
-			tam = so1 + so2;
+		if($scope.hientai != null){
+			document.getElementById("id04").innerHTML = $scope.hientai;
 		}
-		else{
-			if(pheptinh == 'tru'){
-				tam = so1 - so2;
-			}
-			else{
-				if(pheptinh == 'nhan'){
-					tam = so1 * so2;
-				}
-				else{
-					if(pheptinh == 'chia'){
-						tam = so1 / so2;
-					}
-					else{
-						$scope.thongbao = 'Bạn Chưa Chọn Phép Tính !';
-
-					}
-				}
-			}
+		if($scope.previous != null){
+			document.getElementById("id05").innerHTML = $scope.previous;
 		}
-
-		$scope.kq = tam;
+		if($scope.hocvan != null){
+			document.getElementById("id06").innerHTML = $scope.hocvan;
+		}
 	};
 });
+
